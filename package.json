@@ -1,7 +1,7 @@
 {
-  "name": "vuepress-theme-reco",
+  "name": "X-Man-Blog",
   "version": "1.3.2",
-  "description": "A simple and beautiful vuepress Blog & Doc theme.",
+  "description": "心怀不惧 方能翱翔于天际",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev example/docs",

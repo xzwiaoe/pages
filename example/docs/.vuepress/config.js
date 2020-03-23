@@ -1,7 +1,7 @@
 module.exports = {
   title: "肖布斯博客",
   description: '枪如惊雷 照一身肝胆',
-  dest: 'docs',
+  dest: 'dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
@@ -9,7 +9,6 @@ module.exports = {
   // theme: 'reco',
   theme: require.resolve('../../../'),
   themeConfig: {
-    sidebar: 'auto',//在所有页面中启用自动生成侧栏
     nav: [
       { text: '主页', link: '/', icon: 'reco-home' },
       { text: '时间轴', link: '/timeline/', icon: 'reco-date' }
