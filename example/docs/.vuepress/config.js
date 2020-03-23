@@ -9,6 +9,7 @@ module.exports = {
   // theme: 'reco',
   theme: require.resolve('../../../'),
   themeConfig: {
+    sidebar: 'auto',//在所有页面中启用自动生成侧栏
     nav: [
       { text: '主页', link: '/', icon: 'reco-home' },
       { text: '时间轴', link: '/timeline/', icon: 'reco-date' }
