@@ -1,7 +1,7 @@
 module.exports = {
   title: "肖布斯博客",
   description: '枪如惊雷 照一身肝胆',
-  dest: 'example/docs/public',
+  dest: 'docs',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
@@ -36,8 +36,8 @@ module.exports = {
         text: '标签' // 默认 “标签”
       }
     },
-    logo: '/head.png',
-    authorAvatar: '/head.png',
+    logo: 'https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/head.png',
+    authorAvatar: 'https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/head.png',
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
@@ -48,7 +48,7 @@ module.exports = {
     // 作者
     author: 'X-Man',
     // 备案号
-    record: 'xxxx',
+    record: '粤ICP备14094535号',
     // 项目开始时间
     startYear: '2020',
     /**
