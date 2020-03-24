@@ -40,7 +40,7 @@ jobs:
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
           echo "go ssh"
-          ssh "$USER@$HOST"
+          ssh "$USER@$HOST -tt"
           sh "$DEVELOP_SH_PATH"
           logout
           
