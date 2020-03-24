@@ -29,3 +29,31 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
+
+  # 更新阿里云服务器
+  deploy-on-aliyun:
+    needs: build-and-deploy
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Aliyun_Deploy
+      env: 
+        ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
+        HOST: 47.106.96.91
+        USER: root
+        DEVELOP_SH_PATH: /root/deploy_blog.sh
+      run: |
+        SSH_PATH="$HOME/.ssh"
+        mkdir -p $SSH_PATH
+        touch "$SSH_PATH/known_hosts"
+        echo "$ACTIONS_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
+        chmod 700 "$SSH_PATH"
+        chmod 600 "$SSH_PATH/known_hosts"
+        chmod 600 "$SSH_PATH/id_rsa"
+        eval $(ssh-agent)
+        ssh-add "$SSH_PATH/id_rsa"
+        ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
+        ssh "$USER@$HOST"
+        sh "$DEVELOP_SH_PATH"
+        
+

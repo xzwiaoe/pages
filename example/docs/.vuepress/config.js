@@ -49,8 +49,9 @@ module.exports = {
     author: 'X-Man',
     // 备案号
     record: '粤ICP备14094535号',
+    recordLink:'http://beian.miit.gov.cn/',
     // 项目开始时间
-    startYear: '2020',
+    startYear: '2016',
     /**
      * 密钥 (if your blog is private)
      */
