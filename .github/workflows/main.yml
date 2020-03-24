@@ -48,9 +48,11 @@ jobs:
           chmod 700 "$SSH_PATH"
           chmod 600 "$SSH_PATH/known_hosts"
           chmod 600 "$SSH_PATH/id_rsa"
+          echo "file addad"
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
+          echo "go ssh"
           ssh "$USER@$HOST"
           sh "$DEVELOP_SH_PATH"
         
