@@ -9,7 +9,7 @@ on:
 # 任务
 jobs:
   deploy-on-aliyun:
-    needs: build-and-deploy
+    # needs: build-and-deploy
     # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
@@ -38,5 +38,6 @@ jobs:
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
           echo "go ssh"
           ssh "$USER@$HOST"
-          sh "$DEVELOP_SH_PATH"  
+          sh "$DEVELOP_SH_PATH"
+          logout
           
