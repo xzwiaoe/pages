@@ -36,7 +36,7 @@ jobs:
     # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
-      - name: Aliyun_Deploy
+      - name: Aliyun
       env: 
         ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
         HOST: 47.106.96.91
