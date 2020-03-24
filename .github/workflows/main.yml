@@ -34,19 +34,19 @@ jobs:
     # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
-      #- name: Setup git file
-        #env: 
-        #  ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
-        #  USER: root
-        #run: |
-        #  SSH_PATH="~/.ssh"
-        #  mkdir -p $SSH_PATH
-        #  touch "$SSH_PATH/known_hosts"
-        #  echo "$ACTIONS_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
-        #  chmod 700 "$SSH_PATH"
-        #  chmod 600 "$SSH_PATH/known_hosts"
-         # chmod 600 "$SSH_PATH/id_rsa"
-        #  echo "file addad"
+      - name: Setup git file
+        env: 
+          ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
+          USER: root
+        run: |
+          SSH_PATH="~/.ssh"
+          mkdir -p $SSH_PATH
+          touch "$SSH_PATH/known_hosts"
+          echo "$ACTIONS_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
+          chmod 700 "$SSH_PATH"
+          chmod 600 "$SSH_PATH/known_hosts"
+          chmod 600 "$SSH_PATH/id_rsa"
+          echo "file addad"
       - name: Setup git excute
         env: 
           USER: root
