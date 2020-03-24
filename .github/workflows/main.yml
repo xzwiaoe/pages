@@ -29,8 +29,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
-
-  # 更新阿里云服务器
   deploy-on-aliyun:
     needs: build-and-deploy
     # 服务器环境：最新版 Ubuntu
