@@ -36,7 +36,6 @@ jobs:
         run: |
           SSH_PATH="~/.ssh"
           eval $(ssh-agent)
-          ll "$SSH_PATH"
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
           echo "go ssh"
