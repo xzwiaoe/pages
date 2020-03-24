@@ -11,3 +11,5 @@
 ## 部署到Pages.GitHub.io
 参考文献：[使用GitHub Pages 建立博客](https://blog.csdn.net/qq_39268193/article/details/86028884)
 
+[使用 GitHub Actions 自动部署博客](https://vuepress-theme-reco.recoluan.com/views/other/github-actions.html)
+

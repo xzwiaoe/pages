@@ -7,7 +7,7 @@ categories:
   - code
 ---
 
-#### 基础篇
+## 基础篇
 - [flutter实战(书籍) book.flutterchina.club](https://book.flutterchina.club/)\
  可以以此为基础进行入门.里面有常用的组件分类等知识
 - 阿里 [flutter-go](https://vuex.vuejs.org/zh/)\
@@ -23,18 +23,18 @@ categories:
     - [四、 Redux、主题、国际化](https://juejin.im/post/5b79767ff265da435450a873)
     - [五、 深入探索](https://juejin.im/post/5bc450dff265da0a951f032b)
     - [六、 深入Widget原理](https://juejin.im/post/5c7e853151882549664b0543)
-#### 社区篇
+## 社区篇
 - [flutter中文网 flutterchina.club](https://flutterchina.club/)\
  比较健全的社区 
 - [flutter社区中文资源 flutter-io.cn](https://flutter-io.cn/)\
  比较健全的社区 
 - [掘金社区 juejin.im](https://juejin.im/tag/Flutter?utm_source=flutterchina&utm_medium=word&utm_content=btn&utm_campaign=q3_website)\
   非常好的聚集地
-##### 官网的第三方插件
+### 官网的第三方插件
   [pub.dartlang.org](https://pub.dartlang.org/)\
 第三方库直接在此搜索
 
-#### 实战篇
+## 实战篇
 - github:
     - [FlutterDemo](https://github.com/OpenFlutter/Flutter-Notebook)\
     日更的FlutterDemo合集，今天你fu了吗\
@@ -48,7 +48,7 @@ categories:
     - [flutter_gank](https://github.com/lijinshanmx/flutter_gank)\
     干货网,很好的借鉴项目,<font color=red><strong>注释等都有.不定时更新</strong></font>
 
-#### 博文篇
+## 博文篇
 - 状态管理
     - [状态管理特别篇——Provide](https://github.com/OpenFlutter/Flutter-Notebook)\
     状态管理中的一种
@@ -63,10 +63,10 @@ categories:
     - [Flutter进阶：路由、路由栈详解及案例分析](https://juejin.im/post/5c7d19f751882555a8223602)\
  Navigator最好的讲解.利用场景加上图解.剖析的很透彻
 
-#### 插件片
+## 插件篇
 - 一个很棒的等待动画库:[Spinkit](https://github.com/OpenFlutter/Flutter-Notebook/tree/master/mecury_project/example/spinkit_animation)
 - 新一代Flutter-Native混合解决方案:[flutter_boost](https://github.com/alibaba/flutter_boost?utm_source=gold_browser_extension)
  
-#### 问题篇
+## 问题篇
 - [The APK failed to install. Error:Could not parse error string](http://morecoder.com/article/1115392.html)\
     问题是模拟器CPU架构的问题
