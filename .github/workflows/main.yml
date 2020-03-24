@@ -17,7 +17,6 @@ jobs:
         env: 
           ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
           USER: root
-          DEVELOP_SH_PATH: /root/deploy_blog.sh
         run: |
           SSH_PATH="~/.ssh"
           mkdir -p $SSH_PATH
@@ -31,9 +30,13 @@ jobs:
         env: 
           USER: root
           HOST: 47.106.96.91
+          PACKAGE_NAME: blog
+          HOME_PATH: /home
+          DEVELOP_SH_PATH: /root/deploy_blog.sh
         run: |
           SSH_PATH="~/.ssh"
           eval $(ssh-agent)
+          ll "$SSH_PATH"
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
           echo "go ssh"
