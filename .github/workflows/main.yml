@@ -39,8 +39,5 @@ jobs:
           echo "$SSH_PATH/id_rsa"
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
-          echo "go ssh"
-          ssh "$USER@$HOST -tt"
-          sh "$DEVELOP_SH_PATH"
-          logout
+          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt $USER@$HOST ls
           
