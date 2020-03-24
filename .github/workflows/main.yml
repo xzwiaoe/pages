@@ -41,7 +41,7 @@ jobs:
           USER: root
           DEVELOP_SH_PATH: /root/deploy_blog.sh
         run: |
-          SSH_PATH="$HOME/.ssh"
+          SSH_PATH="~/.ssh"
           mkdir -p $SSH_PATH
           touch "$SSH_PATH/known_hosts"
           echo "$ACTIONS_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
