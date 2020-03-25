@@ -1,3 +1,12 @@
+---
+title: 解决mysql保存emoji表情报错
+date: 2019-01-31
+tags:
+  - 计算机
+categories:
+  - code
+---
+
 ## 总结
 
 早期的mysql版本将utf8  
