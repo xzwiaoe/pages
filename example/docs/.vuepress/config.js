@@ -24,6 +24,10 @@ module.exports = {
         ]
       } */
     ],
+    valineConfig: {
+      appId: '5RTVETi3q4d6DBSs60KTrvrG-gzGzoHsz',// your appId
+      appKey: 'iXBr8hgnaN9FTWPGTutx8uL0', // your appKey
+    },
     type: 'blog',
     // 博客设置
     blogConfig: {
@@ -49,7 +53,7 @@ module.exports = {
     author: 'X-Man',
     // 备案号
     record: '粤ICP备14094535号',
-    recordLink:'http://beian.miit.gov.cn/',
+    recordLink: 'http://beian.miit.gov.cn/',
     // 项目开始时间
     startYear: '2016',
     /**
@@ -61,7 +65,7 @@ module.exports = {
         desc: '心怀不惧 方能翱翔于天际',
         avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
         link: 'https://www.btluo.com'
-      },{
+      }, {
         title: '午后南杂',
         desc: 'Enjoy when you can, and endure when you must.',
         email: '1156743527@qq.com',

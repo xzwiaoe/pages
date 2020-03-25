@@ -10,7 +10,7 @@ categories:
 ### 流水式
 传统写MD文章，然后提交到Github并本地执行build打包完上传到云服务器
 ### 自动化
-新建gh-pages分支,配合Github Actions|
+新建gh-pages分支,配合pages.github.io和Github Actions\
 触发push到master主分支的行为就执行.github/workflows/*.yml下的文件.而达到自动化打包更新
 ### 加快网络访问
 毕竟是国外的网络,对于国内访问非常卡,于是此篇文章的目是\
@@ -39,7 +39,7 @@ nrm use taobao
 
 ## 选用开源项目并部署
 
-[vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/views/1.x/)
+本文采用此开源项目：[vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/views/1.x/)
 
 [Pages 自定义域名](https://vuepress-theme-reco.recoluan.com/views/other/domain.html)
 
@@ -89,8 +89,8 @@ jobs:
           FOLDER: dist
 ```         
 ## github Actions自动触发服务器更新
-由于github.io的服务器是在国外.并且并发量比较带，导致带宽的严重缓慢\
-于是便有了部署到个人的阿里云服务器上
+由于github.io的服务器是在国外.并且并发量比较大，导致带宽的严重缓慢\
+于是便有了部署到个人的阿里云服务器上的想法\
 
 ### 生成RSA公私匙
 这里推荐码云的教程：[生成/添加SSH公钥](https://gitee.com/help/articles/4191#article-header0)
@@ -158,12 +158,17 @@ server {
 - 1.云服务器允许SSH远程登录
 - 2.Github Actions触发远程更新
 
+登录[阿里云控制台](https://homenew.console.aliyun.com),云服务器ECS->网络与安全->密匙对\
+创建密匙对并绑定到对应的ECS实例中，然后重启实例
+实例就只允许使用RSA密匙的方式登录(旧的密码方式失效)
+
+以下为客户端访问远程服务器测试
 ```
 #此时有需要RSA密匙对.可以重用之前的
-#云服务器放置公匙
+#远程服务器放置公匙(已在阿里云密匙对中添加并绑定)
 #客户端放置私匙
 ssh-add ~/.ssh/id_rsa
-#默认端口是22.其他端口得家 -p 端口号
+#默认端口是22.其他端口得加 -p 端口号
 ssh-keyscan -t rsa 47.106.96.91
 ```
 ### 出Bug了
