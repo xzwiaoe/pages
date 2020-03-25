@@ -56,5 +56,5 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa -p $PORT $HOST >> "$SSH_PATH/known_hosts"
-          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt -p $POST $USER@$HOST ./deploy_blog.sh
+          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt -p $PORT $USER@$HOST ./deploy_blog.sh
           
