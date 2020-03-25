@@ -37,7 +37,6 @@ jobs:
       - name: Setup git file
         env: 
           ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
-          USER: root
         run: |
           SSH_PATH="~/.ssh"
           mkdir -p $SSH_PATH
@@ -50,12 +49,12 @@ jobs:
       - name: Setup git excute
         env: 
           USER: root
-          HOST: 47.106.96.91
+          HOST: 39.108.175.238
+          PORT: 22506
         run: |
           SSH_PATH="~/.ssh"
           eval $(ssh-agent)
-          echo "$SSH_PATH/id_rsa"
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
-          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt $USER@$HOST ./deploy_blog.sh
+          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt -p $POST $USER@$HOST ./deploy_blog.sh
           
