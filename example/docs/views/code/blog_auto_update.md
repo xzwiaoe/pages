@@ -13,13 +13,25 @@ categories:
 新建gh-pages分支,配合pages.github.io和Github Actions\
 触发push到master主分支的行为就执行.github/workflows/*.yml下的文件.而达到自动化打包更新
 ### 加快网络访问
-毕竟是国外的网络,对于国内访问非常卡,于是此篇文章的目是\
-只要master有更新便同步执行云服务器的shell脚本更新.生成最新的文章页面
+毕竟是国外的网络,对于国内访问非常卡:fearful:,于是此篇文章的目是\
+只要master有更新:grinning:便同步执行云服务器的shell脚本更新:heart_eyes:.生成最新的文章页面:muscle:
 
+@flowstart
+process=>operation: master有push更新
+process2=>operation: 触发Github Actions
+process3=>operation: 打包并部署到gh-pages分支
+process4=>operation: SSH远程登录云服务器git pull(gh-pages分支)
+e=>end: End
+
+process->process2
+process2->process3
+process3->process4
+process4->e
+@flowend
 
 ## 准备
 ### 切换 NPM 镜像源
-```
+``` shell
 npm install -g nrm
 
 /**
@@ -54,7 +66,7 @@ nrm use taobao
 
 里面有两个分支master(主分支.放源码)和gh-pages(存放build编译后的包)
 
-```
+``` yml
 # ${home}/.github/workflows/main.yml
 name: Deploy GitHub Pages
 
@@ -87,7 +99,8 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
-```         
+``` 
+
 ## github Actions自动触发服务器更新
 由于github.io的服务器是在国外.并且并发量比较大，导致带宽的严重缓慢\
 于是便有了部署到个人的阿里云服务器上的想法\
@@ -100,7 +113,8 @@ TIP:记得在云服务器上操作
 ### 添加公匙到Github
 把在云服务生成的id_rsa.pub添加到settings->Deploy Keys中(如下图)
 ![添加公匙到Github](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/vuepress_deploy.png)
-```
+
+``` sh
 #克隆项目到云服务器
 git clone https://github.com/xzwiaoe/xzwiao.github.io.git
 #切换到分支gh-pages(记得cd到项目根目录)
@@ -108,7 +122,7 @@ git checkout gh-pages
 ```
 
 ### 编写shell VS nginx.conf
-```
+``` sh 
 #deploy_blog.sh
 
 #!/bin/bash
@@ -121,7 +135,7 @@ git pull
 记得赋予deploy.sh执行权限(chmod命令)
 
 配置https请先自行百度.晚点把教程补上
-```
+``` nginx 
 #nginx.conf
 
 #重定向到https
@@ -172,7 +186,7 @@ ssh-add ~/.ssh/id_rsa
 ssh-keyscan -t rsa 47.106.96.91
 ```
 ### 出Bug了
-```
+``` shell
 #执行ssh
 ssh -o StrictHostKeyChecking=no -i ~./ssh/id_rsa -A -tt -p 22506 39.108.175.238 ls
 #报如下错误.去掉 -i ~./ssh/id_rsa就不会
