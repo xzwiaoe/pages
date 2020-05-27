@@ -1,6 +1,6 @@
 module.exports = {
   title: "肖布斯博客",
-  description: '枪如惊雷 照一身肝胆',
+  description: '心怀不惧 方能翱翔于天际',
   dest: 'dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],

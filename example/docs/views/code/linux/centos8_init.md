@@ -1,6 +1,6 @@
 ---
 title: Centos8搭建
-date: 2020-5-6
+date: 2020-05-05
 tags:
   - linux
 categories:
