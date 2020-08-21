@@ -53,24 +53,25 @@ docker logs jenkins
 
 ``` sh
 #!/usr/bin/env bash
+
 app_name01='namo-registry'
 app_name02='namo-config'
 app_name03='namo-gateway'
-cd /root/namo-cloud/namo-registry/
+cd /mydata/jenkins_home/workspace/namo-config/namo-registry/
 echo '----begin mvn package----'
 mvn clean package
 echo '----stop container----'
 docker stop ${app_name01}
 echo '----rm container----'
 docker rm ${app_name01}
-cd /root/namo-cloud/namo-config/
+cd /mydata/jenkins_home/workspace/namo-config/namo-config/
 echo '----begin mvn package----'
 mvn clean package
 echo '----stop container----'
 docker stop ${app_name02}
 echo '----rm container----'
 docker rm ${app_name02}
-cd /root/namo-cloud/namo-gateway/
+cd /mydata/jenkins_home/workspace/namo-config/namo-gateway/
 echo '----begin mvn package----'
 mvn clean package
 echo '----stop container----'
@@ -85,8 +86,9 @@ docker-compose -f /root/docker-compose-config.yml up -d
 
 ``` sh
 #!/usr/bin/env bash
+
 app_name='namo-admin'
-cd /root/namo-cloud/namo-admin/
+cd /mydata/jenkins_home/workspace/namo-admin/namo-admin/
 echo '----begin mvn package----'
 mvn clean package
 echo '----stop container----'
@@ -101,8 +103,9 @@ docker-compose -f /root/docker-compose-app.yml up -d
 
 ``` sh
 #!/usr/bin/env bash
+
 app_name='namo-portal'
-cd /root/namo-cloud/namo-portal/
+cd /mydata/jenkins_home/workspace/namo-config/namo-portal/
 echo '----begin mvn package----'
 mvn clean package
 echo '----stop container----'
@@ -113,6 +116,7 @@ echo '----rm none images----'
 docker rmi `docker images | grep none | awk '{print $3}'`
 echo '----start container----'
 docker-compose -f /root/docker-compose-app.yml up -d
+
 ```
 
 为三个shell文件设置可执行权限
@@ -122,6 +126,21 @@ chmod +x /root/jenkins_sh/config.sh
 chmod +x /root/jenkins_sh/admin.sh
 chmod +x /root/jenkins_sh/portal.sh
 ```
+
+### jenkins设置远程登录
+
+系统管理》系统配置》SSH remote hosts
+![jenkins设置远程登录](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-0301.png)
+
+### jenkins新建任务
+
+#### 添加git项目，添加密匙才有SSH的方式免密pull项目
+
+![jenkins新建任务](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-03.png)
+
+#### 远程宿主机服务器并执行打包脚本
+
+![jenkins新建任务](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-0301.png)
 
 ## 开机自启动
 
@@ -136,3 +155,7 @@ chmod +x /root/jenkins_sh/portal.sh
 [使用Jenkins一键打包部署SpringBoot应用，就是这么6！](https://mp.weixin.qq.com/s/tQqvgSc9cHBtnqRQSbI4aw)
 
 [微服务架构下的自动化部署，使用Jenkins来实现！](http://www.macrozheng.com/#/deploy/mall_swarm_deploy_jenkins)
+
+[使用jenkins插件SSH plugin执行远程ssh](https://blog.csdn.net/df0128/article/details/90298591)
+
+[Linux配置开机自启动执行脚本的两种方法](https://www.linuxprobe.com/linux-open-sh.html)

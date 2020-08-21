@@ -11,11 +11,11 @@ categories:
 
 本系统采用Linux系统contos8.0版本
 
-项目使用Java语言,Spring boot框架,利用mvn插件docker-maven-plugin在打包(package/build)是自动构建镜像
+项目使用Java语言,Spring boot框架,利用mvn插件docker-maven-plugin在打包(package/build)时自动构建镜像
 
 项目基于微服务spring cloud全家桶.部署到码云Gitee.com中.
 
-使用docker容器装载每个服务.使用docker-compose进行部署.
+使用docker容器装载每个服务.docker-compose进行部署.
 
 - 基础环境 docker-compose-env.yml
 
@@ -36,9 +36,10 @@ categories:
 |config|配置中心
 |gateway|网关
 
-- 具体的项目(有依赖关系,需配置项目启动完成后启动) docker-compose-env.yml
+- 具体的项目(有依赖关系,需配置项目启动完成后启动) docker-compose-app.yml
 
 [Centos8搭建](https://www.fumeck.com/views/code/linux/centos8_init.html)
+
 [docker教程链接](https://www.fumeck.com/views/code/linux/docker_init.html)
 
 ## 部署思路
