@@ -130,17 +130,19 @@ chmod +x /root/jenkins_sh/portal.sh
 ### jenkins设置远程登录
 
 系统管理》系统配置》SSH remote hosts
+
+如果没有就去插件管理中下载SSH Plugin
 ![jenkins设置远程登录](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-0301.png)
 
 ### jenkins新建任务
 
 #### 添加git项目，添加密匙才有SSH的方式免密pull项目
 
-![jenkins新建任务](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-03.png)
+![添加git项目](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-03.png)
 
 #### 远程宿主机服务器并执行打包脚本
 
-![jenkins新建任务](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-0301.png)
+![远程宿主机](https://fublog.oss-cn-shenzhen.aliyuncs.com/vuepress/project_auto_deploy_test-04.png)
 
 ## 开机自启动
 

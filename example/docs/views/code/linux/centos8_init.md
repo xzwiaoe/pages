@@ -71,6 +71,24 @@ docker --version
 ``` sh
 systemctl enable docker
 ```
+### 安装node
+``` sh
+#下载
+sudo curl -L https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz -o /home/tool/node-v12.18.3.tar.xz
+tar -xvf node-v12.18.3.tar.xz
+mv node-v12.18.3/ /usr/local/nodejs
+# 返回根目录并添加以下jdk环境变量
+cd ~
+vim +  ./.bashrc
+# 更新环境变量
+source ~/.bashrc
+#查看版本
+node -v
+npm -v
+```
+::: tip node环境变量
+export PATH=$PATH:/usr/local/nodejs/bin
+:::
 
 ## 参考文献
 [CentOS7设置阿里镜像教程](https://www.cnblogs.com/zhaoyanhaoBlog/p/12118473.html)
@@ -82,3 +100,7 @@ systemctl enable docker
 [centos8 安装 docker](https://www.cnblogs.com/yadongliang/p/12535004.html)
 
 [CentOS Docker 安装](https://www.runoob.com/docker/centos-docker-install.html)
+
+[CentOS Nodejs 安装](https://www.cnblogs.com/zhi-leaf/p/10979629.html)
+
+[修改Nodejs内置的npm默认配置路径方法](https://www.cnblogs.com/fuqiang88/p/11426804.html)

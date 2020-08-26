@@ -15,7 +15,8 @@ vim /etc/docker/daemon.json
 #新增以下内容(无则创建)
 {
  "registry-mirrors": ["https://hub-mirror.c.163.com","https://reg-mirror.qiniu.com","https://registry.docker-cn.com"],
- "live-restore": true
+ "live-restore": true,
+  "graph": "/home/mydata/docker"
 }
 ```
 之后重新启动服务：
