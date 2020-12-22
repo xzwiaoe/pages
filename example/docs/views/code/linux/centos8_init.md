@@ -85,6 +85,8 @@ source ~/.bashrc
 #查看版本
 node -v
 npm -v
+#使用国内的淘宝镜像
+npm config set registry https://registry.npm.taobao.org
 ```
 ::: tip node环境变量
 export PATH=$PATH:/usr/local/nodejs/bin
