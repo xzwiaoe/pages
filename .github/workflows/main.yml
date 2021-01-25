@@ -49,8 +49,8 @@ jobs:
       - name: Setup git excute
         env: 
           USER: root
-          HOST: 39.108.175.238
-          PORT: 22506
+          HOST: 47.107.175.152
+          PORT: 33520
         run: |
           SSH_PATH="~/.ssh"
           eval $(ssh-agent)
